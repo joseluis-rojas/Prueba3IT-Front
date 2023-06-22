@@ -1,18 +1,15 @@
 <br>
 <div class="mb-3">
-  <label for="estilo" class="form-label">Estilo musical: </label>
-<select  class="form-control" [(ngModel)]="selectedOption" (ngModelChange)="onOptionSelected()">
-    <!-- <option selected="true" disabled="disabled" value="0">Selecciona una opción</option> -->
+  <label for="estilo" class="form-label">Estilo musical: </label>  
+  <select class="form-select" [(ngModel)]="selectedOption" (ngModelChange)="onOptionSelected()" aria-label="Default select example">
+    <option disabled selected value="">Selecciona una opción</option>
     <option *ngFor="let opcion of opciones" [value]="opcion">{{ opcion }}</option>
-</select>
+  </select>
 </div>
 <div class="mb-3">
-  <label class="form-label" for="correo" >Correo: </label>
-  <input class="form-control" 
-  type="email" [(ngModel)]="correo" 
-  name="email" placeholder="Ingrese su correo" 
-  ng-required="true" 
-  ng-pattern=" ^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$">
+  <label class="form-label" for="correo">Correo: </label>
+  <input class="form-control" type="email" [(ngModel)]="correo" name="email" placeholder="Ingrese su correo"
+    ng-required="true" ng-pattern=" ^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$">
   <span *ngIf="email.invalid && (email.dirty || email.touched)">
     El formato de correo electrónico no es válido.
   </span>
@@ -26,11 +23,8 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="box">
-      <h3>Error</h3>
       <p>{{ errorMessage }}</p>
-      <button  (click)="closeErrorModal()" class="btn btn-primary">Cerrar</button>
+      <button (click)="closeErrorModal()" class="btn btn-primary">Cerrar</button>
     </div>
   </div>
 </div>
-
-

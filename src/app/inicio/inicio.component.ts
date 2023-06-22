@@ -12,6 +12,6 @@ export class InicioComponent {
   llamarComponente(): void {
     this.mostrarComponenteActual = false;
     this.mostrarComponente = true;
-   
+
   }
 }
